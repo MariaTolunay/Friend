@@ -1,14 +1,13 @@
-﻿@model FriendZone.Models.ViewModels.FriendsInfoVM
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<title> Info </title>
 </head>
 <body>
 	<h1>Find new Friends!</h1>
-	<input type="text" id="friendsId" />	
+	<input type="text" id="friendsId" />
 	<input type="button" id="findFriend" value="Find new Friends" />
-	@*<div id="friendsInfo">@Html.Partial("_ViewImports.cshtml", Model)</div>*@
+	<div id="friendsInfo"></div>
 
 	<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.js"></script>
 	<script src="~/Scripts/JavaScript.js"></script>

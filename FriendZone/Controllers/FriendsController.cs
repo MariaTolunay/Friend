@@ -12,15 +12,21 @@ namespace FriendZone.Controllers
     public class FriendsController : Controller
     {
         // GET: /<controller>/
-        public IActionResult FriendsInfo()
+        public IActionResult Info()
         {
             return View();
         }
 
-        public IActionResult Info(int id)
+        public IActionResult DisplayInfo(int id)
         {
             var model= FriendsRepository.GetFriendsInfoById(id);
-            return View(model);
+            return Json(model);
+        }
+
+        public IActionResult DisplayInfoHTML(int id)
+        {
+            var model = FriendsRepository.GetFriendsInfoById(id);
+            return PartialView("_PersonView", model);
         }
 
         public IActionResult Match()
