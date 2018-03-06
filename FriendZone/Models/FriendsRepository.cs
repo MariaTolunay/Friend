@@ -20,18 +20,25 @@ namespace FriendZone.Models
             FriendsInfo f = friends
                 .SingleOrDefault(p => p.Id == id);
 
-            FriendsInfoVM vm = new FriendsInfoVM
+            if(f != null)
             {
-                FirstName = f.FirstName,
-                Age = f.Age,
-                FavoriteColor = f.FavoriteColor,
-                Horoscope = f.Horoscope,
-                LookAlike = f.LookAlike,
-                ShoeSize = f.ShoeSize,
- 
-            };
+                FriendsInfoVM vm = new FriendsInfoVM
+                {
+                    FirstName = f.FirstName,
+                    Age = f.Age,
+                    FavoriteColor = f.FavoriteColor,
+                    Horoscope = f.Horoscope,
+                    LookAlike = f.LookAlike,
+                    ShoeSize = f.ShoeSize,
 
-            return vm;
+                };
+
+                return vm;
+            }
+            else
+            {
+                return new FriendsInfoVM();
+            }
         }
     }
 }
