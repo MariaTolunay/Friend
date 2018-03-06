@@ -15,6 +15,7 @@ $(document).ready(function () {
 				$("#friendsInfo").html(result);
 				console.log(result);
 				friendsId++;
+				//funkar det?
 			}
 		});
 	});
